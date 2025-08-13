@@ -26,4 +26,4 @@ function resultReport(marks) {
   return { finalScore: Math.round(finalGor), pass: PassCount, fail: failCount };
 }
 
-// console.log(resultReport(100));
+console.log(resultReport([0]));
