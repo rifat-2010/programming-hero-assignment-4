@@ -3,14 +3,15 @@ function resultReport(marks) {
   if (!Array.isArray(marks)) {
     return "Invalid";
   }
+  if (marks.length === 0) {
+    return { finalScore: 0, pass: 0, fail: 0 };
+  }
   let totalNum = 0;
   for (let gorNUm of marks) {
     totalNum += gorNUm;
   }
   let finalGor = totalNum / marks.length;
-  if (finalGor === 0) {
-    return 0;
-  }
+  
   let PassCount = 0;
   for (let passNum of marks) {
     if (passNum >= 40) {
@@ -26,4 +27,4 @@ function resultReport(marks) {
   return { finalScore: Math.round(finalGor), pass: PassCount, fail: failCount };
 }
 
-console.log(resultReport([0]));
+console.log(resultReport([]));
